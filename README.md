@@ -32,7 +32,7 @@ Video Demo:
 https://user-images.githubusercontent.com/70448723/167325553-e256b4f7-d9c9-4829-a93c-48a6da55fa73.mp4
 
 
-Yoshi Maker runs in the browser, no install needed! https://sheltered-meadow-71503.herokuapp.com/home
+Yoshi Maker runs in the browser, no install needed! https://dry-dusk-97067.herokuapp.com/home
 
 To install, clone this repo to any directory on your computer and then do the following:
 
