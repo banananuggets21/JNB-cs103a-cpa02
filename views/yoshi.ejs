@@ -1,0 +1,118 @@
+<div class="jumbotron text-center text-success bg-light">
+        <% if (yoshis.length==1) {%>
+            <h1>My Yoshi Library</h1>
+            <p class="text-center text-success">
+                Bwock Bwock! You have <%= yoshis.length %> Yoshi in your account! 
+            </p>
+        <% } else if (yoshis.length==0) {%>
+            <h1>No Yoshis?</h1>
+            <div class="bg-dark text-white">
+                <ul>
+                    <li>⠀⣞⢽⢪⢣⢣⢣⢫⡺⡵⣝⡮⣗⢷⢽⢽⢽⣮⡷⡽⣜⣜⢮⢺⣜⢷⢽⢝⡽⣝</li>
+                    <li>⠸⡸⠜⠕⠕⠁⢁⢇⢏⢽⢺⣪⡳⡝⣎⣏⢯⢞⡿⣟⣷⣳⢯⡷⣽⢽⢯⣳⣫⠇</li>
+                    <li>⠸⡸⠜⠕⠕⠁⢁⢇⢏⢽⢺⣪⡳⡝⣎⣏⢯⢞⡿⣟⣷⣳⢯⡷⣽⢽⢯⣳⣫⠇</li>
+                    <li>⠀⠀⢀⢀⢄⢬⢪⡪⡎⣆⡈⠚⠜⠕⠇⠗⠝⢕⢯⢫⣞⣯⣿⣻⡽⣏⢗⣗⠏⠀</li>
+                    <li>⠀⠪⡪⡪⣪⢪⢺⢸⢢⢓⢆⢤⢀⠀⠀⠀⠀⠈⢊⢞⡾⣿⡯⣏⢮⠷⠁⠀⠀</li>
+                    <li>⠀⠀⠀⠈⠊⠆⡃⠕⢕⢇⢇⢇⢇⢇⢏⢎⢎⢆⢄⠀⢑⣽⣿⢝⠲⠉⠀⠀⠀⠀</li>
+                    <li>⠀⠀⠀⠀⠀⡿⠂⠠⠀⡇⢇⠕⢈⣀⠀⠁⠡⠣⡣⡫⣂⣿⠯⢪⠰⠂⠀⠀⠀⠀</li>
+                    <li>⠀⠀⠀⠀⡦⡙⡂⢀⢤⢣⠣⡈⣾⡃⠠⠄⠀⡄⢱⣌⣶⢏⢊⠂⠀⠀⠀⠀⠀⠀</li>
+                    <li>⠀⠀⠀⠀⢝⡲⣜⡮⡏⢎⢌⢂⠙⠢⠐⢀⢘⢵⣽⣿⡿⠁⠁⠀⠀⠀⠀⠀⠀⠀</li>
+                    <li>⠀⠀⠀⠀⠨⣺⡺⡕⡕⡱⡑⡆⡕⡅⡕⡜⡼⢽⡻⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</li>
+                    <li>⠀⠀⠀⠀⣼⣳⣫⣾⣵⣗⡵⡱⡡⢣⢑⢕⢜⢕⡝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</li>
+                    <li>⠀⠀⠀⣴⣿⣾⣿⣿⣿⡿⡽⡑⢌⠪⡢⡣⣣⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</li>
+                    <li>⠀⠀⠀⡟⡾⣿⢿⢿⢵⣽⣾⣼⣘⢸⢸⣞⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</li>
+                    <li>⠀⠀⠀⠀⠁⠇⠡⠩⡫⢿⣝⡻⡮⣒⢽⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</li>
+                </ul>    
+            </div>          
+        <% } else {%>
+            <h1>My Yoshi Library</h1>
+            <p class="text-center text-success">
+                Bwock Bwock! You have <%= yoshis.length %> Yoshis in your account!
+            </p>
+        <% } %>
+    <a class="nav-link" href="/createYoshi">Create one here!</a>
+</div>
+    <% for (yoshi of yoshis){%>
+        <% if (yoshi.color.toLowerCase()=='yellow') {%>
+            <div class="bg-warning text-white">
+                <ul>          
+                    <li>Name:</li><%= yoshi.name%><br><br>
+                    <li>Age:</li><%= yoshi.age%><br><br>
+                    <li>Characteristics:</li> <%= yoshi.description %><br><br>
+                    <li>Birthday:</li><%= yoshi.createdAt %><br><br>
+                    <li><a href="/yoshi/delete/<%= yoshi._id%>" class="text-light">Delete This Yoshi (he will be very sad)</a></li><br><br>
+                    </ul>
+            </div>
+        <%} else if (yoshi.color.toLowerCase()=='blue') {%>
+            <div class="bg-primary text-white">
+                <ul>          
+                    <li>Name:</li><%= yoshi.name%><br><br>
+                    <li>Age:</li><%= yoshi.age%><br><br>
+                    <li>Characteristics:</li> <%= yoshi.description %><br><br>
+                    <li>Birthday:</li><%= yoshi.createdAt %><br><br>
+                    <li><a href="/yoshi/delete/<%= yoshi._id%>" class="text-light">Delete This Yoshi (he will be very sad)</a></li><br><br>
+                    </ul>
+            </div>
+        <%} else if (yoshi.color.toLowerCase()=='red') {%>
+            <div class="bg-danger text-white">
+                <ul>          
+                    <li>Name:</li><%= yoshi.name%><br><br>
+                    <li>Age:</li><%= yoshi.age%><br><br>
+                    <li>Characteristics:</li> <%= yoshi.description %><br><br>
+                    <li>Birthday:</li><%= yoshi.createdAt %><br><br>
+                    <li><a href="/yoshi/delete/<%= yoshi._id%>" class="text-light">Delete This Yoshi (he will be very sad)</a></li><br><br>
+                    </ul>
+            </div>
+        <%} else if (yoshi.color.toLowerCase()=='grey') {%>
+            <div class="bg-secondary text-white">
+                <ul>          
+                    <li>Name:</li><%= yoshi.name%><br><br>
+                    <li>Age:</li><%= yoshi.age%><br><br>
+                    <li>Characteristics:</li> <%= yoshi.description %><br><br>
+                    <li>Birthday:</li><%= yoshi.createdAt %><br><br>
+                    <li><a href="/yoshi/delete/<%= yoshi._id%>" class="text-light">Delete This Yoshi (he will be very sad)</a></li><br><br>
+                    </ul>
+            </div>
+        <%} else if (yoshi.color.toLowerCase()=='white') {%>
+            <div class="bg-light text-dark">
+                 <ul>          
+                    <li>Name:</li><%= yoshi.name%><br><br>
+                    <li>Age:</li><%= yoshi.age%><br><br>
+                    <li>Characteristics:</li> <%= yoshi.description %><br><br>
+                    <li>Birthday:</li><%= yoshi.createdAt %><br><br>
+                    <li><a href="/yoshi/delete/<%= yoshi._id%>" class="text-dark">Delete This Yoshi (he will be very sad)</a></li><br><br>
+                </ul>
+            </div>
+        <%} else if (yoshi.color.toLowerCase()=='black') {%>
+            <div class="bg-dark text-white">
+                <ul>          
+                    <li>Name:</li><%= yoshi.name%><br><br>
+                    <li>Age:</li><%= yoshi.age%><br><br>
+                    <li>Characteristics:</li> <%= yoshi.description %><br><br>
+                    <li>Birthday:</li><%= yoshi.createdAt %><br><br>
+                    <li><a href="/yoshi/delete/<%= yoshi._id%>" class="text-light">Delete This Yoshi (he will be very sad)</a></li><br><br>
+                </ul>
+            </div>
+        <%} else if (yoshi.color.toLowerCase()=='teal') {%>
+            <div class="bg-info text-white">
+                <ul>          
+                    <li>Name:</li><%= yoshi.name%><br><br>
+                    <li>Age:</li><%= yoshi.age%><br><br>
+                    <li>Characteristics:</li> <%= yoshi.description %><br><br>
+                    <li>Birthday:</li><%= yoshi.createdAt %><br><br>
+                    <li><a href="/yoshi/delete/<%= yoshi._id%>" class="text-light">Delete This Yoshi (he will be very sad)</a></li><br><br>
+                </ul>
+            </div>
+        <%} else {%>
+            <div class="bg-success text-white">
+                <ul>          
+                    <li>Name:</li><%= yoshi.name%><br><br>
+                    <li>Age:</li><%= yoshi.age%><br><br>
+                    <li>Color:</li><%= yoshi.color%><br><br>
+                    <li>Characteristics:</li> <%= yoshi.description %><br><br>
+                    <li>Birthday:</li><%= yoshi.createdAt %><br><br>
+                    <li><a href="/yoshi/delete/<%= yoshi._id%>" class="text-light">Delete This Yoshi (he will be very sad)</a></li><br><br>
+                </ul>
+            </div>
+        <%} %>
+    <% } %>
