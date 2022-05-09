@@ -31,7 +31,7 @@ const Yoshi = require('./models/Yoshi');
 const mongoose = require( 'mongoose' );
 
 const mongodb_URI = process.env.mongodb_URI
-//const mongodb_URI = 'mongodb://localhost:27017/cs103a_todo'
+//const mongodb_URI = 'INSERT MONGODB LINK HERE!'
 
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
